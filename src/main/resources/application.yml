@@ -1,0 +1,13 @@
+logging:
+  level:
+    root: Info
+
+server:
+  tomcat:
+    uri-encoding: UTF-8
+  port: 8080
+
+
+spring:
+  profiles:
+    active: dev
