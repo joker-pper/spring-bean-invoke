@@ -17,6 +17,12 @@ InvokeParameterResolver主要是用来实现无法自动解析的参数,比如or
 public void showOrder(Order order1, Order order2, Order... orders) {
 }
 
-Order   :  {name: '订单1', price: 100}
+Order实体
+{
+    name: string,
+    price: int
+}
+
+Order   :  {name: '订单1', price: 100} 
 Order   :  {name: '订单2', price: 200}
 Order[] :  [{name: '订单3', price: 300}] 
