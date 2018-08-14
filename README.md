@@ -1,4 +1,4 @@
-**通过bean-invoke调用spring的bean的demo，结合接口访问工具可以进行bean方法的调用**
+**通过bean-invoke调用spring的bean的示例，结合接口访问工具便可以进行项目中bean方法的调用**
 </br>
 
 bean-invoke:  https://github.com/joker-pper/bean-invoke.git
