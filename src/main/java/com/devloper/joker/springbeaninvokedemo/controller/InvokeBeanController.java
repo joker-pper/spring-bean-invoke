@@ -55,7 +55,11 @@ public class InvokeBeanController extends ControllerTemplate {
         return parameterResolver;
     }
 
-
+    /**
+     * 通过名称找到对应的bean实例
+     * @param beanName
+     * @return
+     */
     @Override
     public Object getBean(String beanName) {
         return applicationContext.getBean(beanName);
