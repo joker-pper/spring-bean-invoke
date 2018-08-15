@@ -1,6 +1,6 @@
 logging:
   level:
-    root: Info
+    root: info
 
 server:
   tomcat:
@@ -11,3 +11,7 @@ server:
 spring:
   profiles:
     active: dev
+
+auth:
+  enable: true #是否启用权限验证 (开启时请求头必须通过验证后才能访问,token: admin)
+  is-filter: false #是使用filter验证还是拦截器验证

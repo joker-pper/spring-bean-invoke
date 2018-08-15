@@ -26,6 +26,9 @@ public class InvokeBeanController extends ControllerTemplate {
     @Autowired
     private ApplicationContext applicationContext;
 
+    /**
+     * 定义无法处理的类型的参数值的转换
+     */
     private InvokeParameterResolver parameterResolver = new InvokeParameterResolver() {
         @Override
         public boolean supportType(Type type) {
