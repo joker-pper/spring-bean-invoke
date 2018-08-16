@@ -1,13 +1,13 @@
 **通过bean-invoke调用spring的bean的示例，结合接口访问工具便可以进行项目中bean方法的调用**
 </br>
 
-bean-invoke:  https://github.com/joker-pper/bean-invoke.git
-
-参数值的转换是通过类型转换——>自定义解析——>json数据的转换
-
 InvokeParameterResolver主要是用来实现无法自动解析的参数,比如org.springframework.data.domain.Pageable,
 可在convert方法中进行转换传入的参数
 
+参数值的转换是通过类型转换——>自定义解析——>json数据的转换
+
+
+bean-invoke:  https://github.com/joker-pper/bean-invoke.git
 接口工具地址: http://joker_yyc.coding.me/bean-invoke-html/
 
 > 接口工具操作主要步骤:
@@ -23,7 +23,7 @@ InvokeParameterResolver主要是用来实现无法自动解析的参数,比如or
 1.  若使用提供的接口工具访问:
 	1. 接口需提供跨域支持
 	1. 请求方法执行接口结束路径必须为/result (post请求,参数在body中),获取方法列表接口结束路径必须为/method/entitys  (get请求)
-1.  参考提供的InvokeBeanController提供相应的接口
+1.  参考提供的InvokeBeanController在项目中提供相应的接口
 	1. getBean(String name)是用来通过该name找到所对应的实例,然后执行对应的bean方法
 	1. parameterResolver()是用来提供外部无法转换的数据的自定义解析
 
@@ -31,6 +31,12 @@ InvokeParameterResolver主要是用来实现无法自动解析的参数,比如or
 
 
 HandlerService方法参数示例:
+
+
+>运行项目后接口工具使用截图(若未开启header token验证,则无需添加请求头)
+
+ ![](http://joker_yyc.coding.me/bean-invoke-html/images/default.png)
+
 
 ```
  public void showOrder(Order order1, Order order2, Order... orders) {
