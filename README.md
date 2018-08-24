@@ -8,8 +8,31 @@ InvokeParameterResolver主要是用来实现无法自动解析的参数,比如or
 
 
 bean-invoke:  https://github.com/joker-pper/bean-invoke.git
+<br/>
 接口工具地址: http://joker_yyc.coding.me/bean-invoke-html/
 
+> 功能说明:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;项目集成简单
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;支持远端客户端执行bean/class方法  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;结合接口工具可直接选择bean/class方法通过自定义参数完成service/controller的执行结果(即也可以完成接口的测试)
+
+
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+> 如何集成到项目:
+1.  添加bean-invoke.jar依赖到项目中
+1.  参考提供的InvokeBeanController在项目中提供相应的接口(可直接复制到项目中)
+	1. getBean(String name)是用来通过该name找到所对应的实例,然后执行对应的bean方法
+	1. parameterResolver()是用来提供外部无法转换的数据的自定义解析
+1.  注意事项
+	1.  使用提供的接口工具访问:
+		1. 接口需提供跨域支持
+		1. ajax跨域请求时若出现自定义header将出现预检请求,若项目中存在OPTIONS请求拦截的话需要进行放行,可参考AuthFilter进行处理
+		1. 请求方法执行接口结束路径必须为/result (post请求,参数在body中),获取方法列表接口结束路径必须为/method/entitys  (get请求)
+	1. 方法执行权限较大,需要注意数据安全问题
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
 > 接口工具操作主要步骤:
 1. 设置接口地址路径
 1. 添加请求头(可选)
@@ -18,17 +41,6 @@ bean-invoke:  https://github.com/joker-pper/bean-invoke.git
 1. 点击加载按钮,加载当前bean/class的方法列表
 1. 输入方法中各参数类型所对应的参数值(基本类型直接输入对应的数值,其他对象则输入符合类型的json格式数据)
 1. 点击获取按钮获取执行结果
-
-> 如何集成到项目:
-1.  若使用提供的接口工具访问:
-	1. 接口需提供跨域支持
-	1. 请求方法执行接口结束路径必须为/result (post请求,参数在body中),获取方法列表接口结束路径必须为/method/entitys  (get请求)
-1.  参考提供的InvokeBeanController在项目中提供相应的接口
-	1. getBean(String name)是用来通过该name找到所对应的实例,然后执行对应的bean方法
-	1. parameterResolver()是用来提供外部无法转换的数据的自定义解析
-
-
-
 
 HandlerService方法参数示例:
 
