@@ -12,12 +12,8 @@ bean-invoke:  https://github.com/joker-pper/bean-invoke.git
 接口工具地址: http://joker_yyc.coding.me/bean-invoke-html/
 
 > 功能说明:
-	项目集成简单
-	支持远端客户端执行bean/class方法  
-	结合接口工具可直接选择bean/class方法通过自定义参数完成service/controller的执行结果(即也可以完成接口的测试)
-
-
-
+1. 支持远端客户端执行bean/class方法  
+1. 结合接口工具可直接选择bean/class方法通过自定义参数完成service/controller的执行结果
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
 > 如何集成到项目:
